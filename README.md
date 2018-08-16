@@ -3,7 +3,7 @@
 Save events to your Monthly Calendar. Calendar built using RESTful API architecture in RAILS. User is able to make a get, put, post & delete request to API. More features coming soon! :neckbeard:
 
 ### App in Ruby Rails:
-This App is a refactored from a previous Node.JS application that I built. [Check out the original repo here](https://github.com/natashaU/events_calendar). I decided to practice Ruby on Rails and I cloned my original app to use the original frontend I built in React. I changed the Remote Repo with  `git remote set-url origin` so that the original repo remains intact. I deleted the entire backend in Node.JS and changed the backend to Ruby on Rails — and I built the new backend in rails from scratch. 
+This App is a refactored from a previous Node.JS application that I built. [Check out the original repo here](https://github.com/natashaU/events_calendar). I decided to practice Ruby on Rails and I cloned my original app to use the frontend I built in React. I changed the Remote Repo with  `git remote set-url origin` so that the original repo remains intact. I deleted the entire backend in Node.JS and changed the backend to Ruby on Rails — and I built the new backend in rails from scratch. 
 
 
 ## Heroku Deployment
@@ -40,7 +40,7 @@ To make sure you have rails and other technologies installed to run a ruby on ra
      npm run start
     (navigate to: http://localhost:3000 in your browser)`
 
-   `cd calendarbackend
+    `cd calendarbackend
     bundle install 
     bin/rails db:setup
     bin/rails db:migrate

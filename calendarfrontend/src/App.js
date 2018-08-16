@@ -32,7 +32,10 @@ class App extends Component {
   async componentDidMount() {
     try {
       const allData = await axios.get('http://localhost:3001/events/')
-      const dataArr = allData.data.events // response from db
+      //const dataArr = allData.data.events // response from db
+      const dataArr = allData.data
+      //console.log(allData.data.data)
+      //console.log(allData.data)
 
       // function to iterate dataArr to make events obj for state
       const eventsObj = await this.makeEventsObj(dataArr)
@@ -99,7 +102,7 @@ class App extends Component {
       await axios.delete(`http://localhost:3001/events/${id}`);
       // only get events for day
       const newData = await axios.get(`http://localhost:3001/events/${day_id}`)
-      const dataArr = newData.data.event
+      const dataArr = newData.data
 
       this.setState(prevState => ({
         eventsData: {
@@ -137,10 +140,13 @@ class App extends Component {
         getEvents = await axios.put('http://localhost:3001/events/'+id, postObj)
       }
 
+      //console.log("submitting form")
+      //console.log(getEvents.data)
+
       this.setState(prevState => ({
         eventsData: {
           ...prevState.eventsData, // to not over-ride other day events
-          [this.state.currentDayId]: getEvents.data.event
+          [this.state.currentDayId]: getEvents.data
         },
         currentDayId: null, // to prevent bugs
         currentEditId: null

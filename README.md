@@ -48,6 +48,10 @@ To make sure you have rails and other technologies installed to run a ruby on ra
     (navigate to: http://localhost:3001 in your browser)`
 
     
+    ### To Run Tests
+
+    Type `rspec` in command line
+
 
 
 

@@ -3,22 +3,24 @@ class EventsController < ApplicationController
 	def index
 		#@events = Event.all
 
+
 		#if stale?(last_modified: @events.updated_at, public: true)
 			#memecache to check browser cache
 		@events = Event.order('day_id', 'start_time')
 		#render json: {status: 'SUCCESS', message: 'Loaded Events', data:@events}, status: :ok
 		#render json: @events, status: :ok
 		render json: @events 
-
 	#end
 		
 	end
 
 	def show
 		@events = Event.where("day_id = ?", params[:id]).order('start_time')
+		
 
 		#if stale?(last_modified: @events.updated_at, public: true)
 		render json: @events
+	#end
 	#end
 	end
 

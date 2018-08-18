@@ -31,7 +31,8 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const allData = await axios.get('http://localhost:3001/events/')
+      //const allData = await axios.get('http://localhost:3001/events/')
+      const allData = await axios.get('/events/')
       //const dataArr = allData.data.events // response from db
       const dataArr = allData.data
       //console.log(allData.data.data)
@@ -99,9 +100,11 @@ class App extends Component {
   async handleDelete(id, event, day_id) {
     try {
       event.stopPropagation(); // stop click event from parent div
-      await axios.delete(`http://localhost:3001/events/${id}`);
+      //await axios.delete(`http://localhost:3001/events/${id}`);
+      await axios.delete(`/events/${id}`);
       // only get events for day
-      const newData = await axios.get(`http://localhost:3001/events/${day_id}`)
+      //const newData = await axios.get(`http://localhost:3001/events/${day_id}`)
+      const newData = await axios.get(`/events/${day_id}`) // for proxy 3000 => 3001
       const dataArr = newData.data
 
       this.setState(prevState => ({

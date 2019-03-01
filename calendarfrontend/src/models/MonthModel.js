@@ -5,7 +5,7 @@ const DAY = 'day';
 class MonthModel {
 
   constructor(startDate) {
-    // JavaScript Date `set` functions mutate and cause unexpected
+    // JavaScript Date `set` functions mutate & cause unexpected
     // changes in any Date referenced elsewhere. Only use `new Date()`
     // to make a copy of an existing date. For any date variable
     // declared, always make a new copy
